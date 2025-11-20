@@ -3,6 +3,13 @@ import { ShieldCheck, Award, CheckCircle2 } from 'lucide-react';
 import { CONTACT_INFO, CERTIFICATIONS } from '../constants';
 
 const Hero: React.FC = () => {
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative bg-gradient-to-br from-primary-900 to-primary-800 text-white overflow-hidden pt-10 pb-20 lg:pt-20 lg:pb-28">
       {/* Background Decor */}
@@ -43,12 +50,20 @@ const Hero: React.FC = () => {
             <div className="pt-4 flex flex-col sm:flex-row gap-4">
               <a 
                 href="#pricing" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('pricing');
+                }}
                 className="bg-gold-500 hover:bg-gold-600 text-white text-center px-8 py-4 rounded-xl font-bold text-lg shadow-lg shadow-gold-500/20 transition-transform transform hover:-translate-y-1"
               >
                 Pesan Sekarang & Hemat
               </a>
               <a 
                 href="#science" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('science');
+                }}
                 className="bg-white/10 hover:bg-white/20 text-white text-center px-8 py-4 rounded-xl font-semibold text-lg backdrop-blur-sm border border-white/20 transition-colors"
               >
                 Lihat Bukti Ilmiah

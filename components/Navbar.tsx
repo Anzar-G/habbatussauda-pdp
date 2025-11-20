@@ -6,12 +6,19 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: 'Manfaat', href: '#benefits' },
-    { name: 'Bukti Ilmiah', href: '#science' },
-    { name: 'Testimoni', href: '#testimonials' },
-    { name: 'Harga', href: '#pricing' },
-    { name: 'FAQ', href: '#faq' },
+    { name: 'Manfaat', href: '#benefits', targetId: 'benefits' },
+    { name: 'Bukti Ilmiah', href: '#science', targetId: 'science' },
+    { name: 'Testimoni', href: '#testimonials', targetId: 'testimonials' },
+    { name: 'Harga', href: '#pricing', targetId: 'pricing' },
+    { name: 'FAQ', href: '#faq', targetId: 'faq' },
   ];
+
+  const handleScrollTo = (targetId: string) => {
+    const el = document.getElementById(targetId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-md border-b border-gray-100">
@@ -31,13 +38,17 @@ const Navbar: React.FC = () => {
               <a
                 key={link.name}
                 href={link.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleScrollTo(link.targetId);
+                }}
                 className="text-gray-600 hover:text-primary-600 font-medium transition-colors text-sm uppercase tracking-wide"
               >
                 {link.name}
               </a>
             ))}
             <a
-              href="/order"
+              href="#/order"
               className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full font-bold transition-all transform hover:scale-105 shadow-lg"
               aria-label="Pesan sekarang"
             >
@@ -66,14 +77,18 @@ const Navbar: React.FC = () => {
               <a
                 key={link.name}
                 href={link.href}
-                onClick={() => setIsOpen(false)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleScrollTo(link.targetId);
+                  setIsOpen(false);
+                }}
                 className="block px-3 py-3 text-base font-medium text-gray-700 hover:bg-primary-50 hover:text-primary-700 rounded-md"
               >
                 {link.name}
               </a>
             ))}
             <a
-              href="/order"
+              href="#/order"
               className="block w-full text-center mt-4 bg-green-500 text-white px-4 py-3 rounded-lg font-bold"
               aria-label="Pesan sekarang"
             >
