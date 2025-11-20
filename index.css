@@ -1,0 +1,21 @@
+/* Base styles for global enhancements. Keep minimal; Tailwind handles most styling. */
+
+/* Respect user motion preferences while preserving smooth scroll for others */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Better text rendering */
+html, body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Avoid layout shift for images without explicit size by reserving space */
+img {
+  height: auto;
+  max-width: 100%;
+}
