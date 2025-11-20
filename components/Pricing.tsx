@@ -67,7 +67,7 @@ const Pricing: React.FC = () => {
                 </ul>
 
                 <a 
-                  href={`/order?qty=${tier.id}`}
+                  href={`#/order?qty=${tier.id}`}
                   className={`w-full flex items-center justify-center gap-2 py-4 rounded-xl font-bold transition-all ${
                     tier.isPopular 
                       ? 'bg-gold-500 hover:bg-gold-600 text-white shadow-lg shadow-gold-500/25' 
