@@ -26,9 +26,11 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center gap-2">
-            <div className="bg-primary-700 text-white p-1.5 rounded font-serif font-bold text-xl">
-              SR12
-            </div>
+            <img
+              src="/favicon.jpeg"
+              alt="Logo SR12"
+              className="h-8 w-8 rounded-full object-cover"
+            />
             <span className="font-bold text-gray-800 hidden sm:block tracking-tight">Habbatussauda Premium</span>
           </div>
 

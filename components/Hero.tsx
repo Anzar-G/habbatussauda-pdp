@@ -73,15 +73,10 @@ const Hero: React.FC = () => {
 
           {/* Image/Product Visual */}
           <div className="relative lg:h-[500px] flex items-center justify-center">
-             {/* Abstract representation of product since no real image available */}
-             <div className="relative w-64 h-80 md:w-80 md:h-96 bg-gradient-to-b from-gray-900 to-black rounded-3xl shadow-2xl border-4 border-gold-500/30 flex flex-col items-center justify-center p-6 text-center transform rotate-3 hover:rotate-0 transition-transform duration-500">
-                <div className="absolute inset-0 bg-[url('https://picsum.photos/seed/oil/400/600')] opacity-40 mix-blend-overlay rounded-2xl bg-cover"></div>
-                <h3 className="text-3xl font-serif font-bold text-gold-400 mb-2 relative z-10">SR12</h3>
-                <p className="text-white uppercase tracking-[0.3em] text-xs mb-8 relative z-10">Habbatussauda</p>
-                <div className="w-24 h-24 rounded-full border-2 border-gold-400/50 flex items-center justify-center relative z-10 backdrop-blur-sm bg-black/30 mb-4">
-                  <span className="text-2xl font-bold text-white">100%</span>
-                </div>
-                <p className="text-sm text-gray-300 relative z-10">Pure Extract<br/>Cold Pressed</p>
+             {/* Product image card */}
+             <div className="relative w-64 h-80 md:w-80 md:h-96 bg-white rounded-3xl shadow-2xl border-4 border-gold-500/30 flex flex-col items-center justify-center p-6 text-center transform rotate-3 hover:rotate-0 transition-transform duration-500 overflow-hidden">
+                <div className="absolute inset-0 bg-[url('/detail-produk.jpeg')] opacity-100 bg-center bg-cover"></div>
+               
                 
                 {/* Floating Badge */}
                 <div className="absolute -right-6 -top-6 bg-red-600 text-white w-20 h-20 rounded-full flex items-center justify-center font-bold text-center text-xs shadow-lg rotate-12 z-20 border-2 border-white">
